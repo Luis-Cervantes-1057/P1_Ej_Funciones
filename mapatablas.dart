@@ -1,134 +1,122 @@
 void main() {
-  // Crear un Map<String, dynamic> para representar información de CocaCola
-  Map<String, dynamic> cocaCola = {
-    // Crear una lista de clientes
-    'clientes': [
-      {
-        'id_cliente': 1,
-        'nombre': 'Juan',
-        'apellido': 'Pérez',
-        'num_celular': '999888777',
-        'direccion': 'Av. Lima 123',
-        'correo': 'juan.perez@example.com',
-      },
-      {
-        'id_cliente': 2,
-        'nombre': 'María',
-        'apellido': 'Gómez',
-        'num_celular': '987654321',
-        'direccion': 'Calle Arequipa 456',
-        'correo': 'maria.gomez@example.com',
-      },
-      {
-        'id_cliente': 3,
-        'nombre': 'Carlos',
-        'apellido': 'López',
-        'num_celular': '912345678',
-        'direccion': 'Jr. Trujillo 789',
-        'correo': 'carlos.lopez@example.com',
-      },
-    ],
-    // Crear una lista de empleados
-    'empleados': [
-      {
-        'id_empleado': 101,
-        'nombre': 'Ana',
-        'apellido': 'Torres',
-        'rfc': 'TORA800101ABC',
-        'curp': 'TORA800101MDFRRN01',
-        'num_celular': '5551112222',
-        'direccion': 'Calle Reforma 123',
-        'sexo': 'Femenino',
-      },
-      {
-        'id_empleado': 102,
-        'nombre': 'Luis',
-        'apellido': 'Ramírez',
-        'rfc': 'RAML850202XYZ',
-        'curp': 'RAML850202HDFRRN02',
-        'num_celular': '5553334444',
-        'direccion': 'Av. Insurgentes 456',
-        'sexo': 'Masculino',
-      },
-      {
-        'id_empleado': 103,
-        'nombre': 'Sofía',
-        'apellido': 'Díaz',
-        'rfc': 'DIZS900303DEF',
-        'curp': 'DIZS900303MDFRRN03',
-        'num_celular': '5555556666',
-        'direccion': 'Paseo de la Reforma 789',
-        'sexo': 'Femenino',
-      },
-    ],
-    // Crear una lista de ventas
-    'venta': [
-      {
-        'id_venta': 1001,
-        'id_empleado': 101,
-        'id_cliente': 1,
-        'id_producto': 501,
-        'fecha_venta': '2023-10-01',
-        'cantidad': 10,
-        'total_pagar': 1500.50,
-      },
-      {
-        'id_venta': 1002,
-        'id_empleado': 102,
-        'id_cliente': 2,
-        'id_producto': 502,
-        'fecha_venta': '2023-10-02',
-        'cantidad': 5,
-        'total_pagar': 750.25,
-      },
-      {
-        'id_venta': 1003,
-        'id_empleado': 103,
-        'id_cliente': 3,
-        'id_producto': 503,
-        'fecha_venta': '2023-10-03',
-        'cantidad': 8,
-        'total_pagar': 1200.00,
-      },
-    ],
+  // Map para Clientes
+  Map<int, Map<String, dynamic>> clientes = {
+    1: {
+      'nombre': 'Juan',
+      'apellido': 'Pérez',
+      'num_celular': '999888777',
+      'direccion': 'Av. Lima 123',
+      'correo': 'juan.perez@example.com',
+    },
+    2: {
+      'nombre': 'María',
+      'apellido': 'Gómez',
+      'num_celular': '987654321',
+      'direccion': 'Calle Arequipa 456',
+      'correo': 'maria.gomez@example.com',
+    },
+    3: {
+      'nombre': 'Carlos',
+      'apellido': 'López',
+      'num_celular': '912345678',
+      'direccion': 'Jr. Trujillo 789',
+      'correo': 'carlos.lopez@example.com',
+    },
   };
 
-  // Mostrar los datos usando forEach
-  print('Información de CocaCola:');
-  // Mostrar clientes con forEach
-  print('\nClientes:');
-  cocaCola['clientes'].forEach((cliente) {
-    print('ID Cliente: ${cliente['id_cliente']}');
-    print('Nombre: ${cliente['nombre']} ${cliente['apellido']}');
-    print('Número de celular: ${cliente['num_celular']}');
-    print('Dirección: ${cliente['direccion']}');
-    print('Correo: ${cliente['correo']}');
+  // Map para Empleados
+  Map<int, Map<String, dynamic>> empleados = {
+    101: {
+      'nombre': 'Ana',
+      'apellido': 'Torres',
+      'rfc': 'TORA800101ABC',
+      'curp': 'TORA800101MDFRRN01',
+      'num_celular': '5551112222',
+      'direccion': 'Calle Reforma 123',
+      'sexo': 'Femenino',
+    },
+    102: {
+      'nombre': 'Luis',
+      'apellido': 'Ramírez',
+      'rfc': 'RAML850202XYZ',
+      'curp': 'RAML850202HDFRRN02',
+      'num_celular': '5553334444',
+      'direccion': 'Av. Insurgentes 456',
+      'sexo': 'Masculino',
+    },
+    103: {
+      'nombre': 'Sofía',
+      'apellido': 'Díaz',
+      'rfc': 'DIZS900303DEF',
+      'curp': 'DIZS900303MDFRRN03',
+      'num_celular': '5555556666',
+      'direccion': 'Paseo de la Reforma 789',
+      'sexo': 'Femenino',
+    },
+  };
+
+  // Map para Ventas
+  Map<int, Map<String, dynamic>> ventas = {
+    1001: {
+      'id_empleado': 101,
+      'id_cliente': 1,
+      'id_producto': 501,
+      'fecha_venta': '2023-10-01',
+      'cantidad': 10,
+      'total_pagar': 1500.50,
+    },
+    1002: {
+      'id_empleado': 102,
+      'id_cliente': 2,
+      'id_producto': 502,
+      'fecha_venta': '2023-10-02',
+      'cantidad': 5,
+      'total_pagar': 750.25,
+    },
+    1003: {
+      'id_empleado': 103,
+      'id_cliente': 3,
+      'id_producto': 503,
+      'fecha_venta': '2023-10-03',
+      'cantidad': 8,
+      'total_pagar': 1200.00,
+    },
+  };
+
+  // Mostrar los datos de Clientes
+  print('Clientes:');
+  clientes.forEach((idCliente, datosCliente) {
+    print('ID Cliente: $idCliente');
+    print('Nombre: ${datosCliente['nombre']} ${datosCliente['apellido']}');
+    print('Número de celular: ${datosCliente['num_celular']}');
+    print('Dirección: ${datosCliente['direccion']}');
+    print('Correo: ${datosCliente['correo']}');
     print('-----------------------------');
   });
 
-  // Mostrar empleados con forEach
+  // Mostrar los datos de Empleados
   print('\nEmpleados:');
-  cocaCola['empleados'].forEach((empleado) {
-    print('ID Empleado: ${empleado['id_empleado']}');
-    print('Nombre: ${empleado['nombre']} ${empleado['apellido']}');
-    print('RFC: ${empleado['rfc']}');
-    print('CURP: ${empleado['curp']}');
-    print('Número de celular: ${empleado['num_celular']}');
-    print('Dirección: ${empleado['direccion']}');
-    print('Sexo: ${empleado['sexo']}');
+  empleados.forEach((idEmpleado, datosEmpleado) {
+    print('ID Empleado: $idEmpleado');
+    print('Nombre: ${datosEmpleado['nombre']} ${datosEmpleado['apellido']}');
+    print('RFC: ${datosEmpleado['rfc']}');
+    print('CURP: ${datosEmpleado['curp']}');
+    print('Número de celular: ${datosEmpleado['num_celular']}');
+    print('Dirección: ${datosEmpleado['direccion']}');
+    print('Sexo: ${datosEmpleado['sexo']}');
     print('-----------------------------');
   });
 
-  // Mostrar ventas con forEach
+  // Mostrar los datos de Ventas
   print('\nVentas:');
-  cocaCola['venta'].forEach((venta) {
-    print('ID Venta: ${venta['id_venta']}');
-    print('ID Empleado: ${venta['id_empleado']}');
-    print('ID Cliente: ${venta['id_cliente']}');
-    print('ID Producto: ${venta['id_producto']}');
-    print('Fecha de venta: ${venta['fecha_venta']}');
-    print('Cantidad: ${venta['cantidad']}');
-    print('Total a pagar: \$${venta['total_pagar']}');
+  ventas.forEach((idVenta, datosVenta) {
+    print('ID Venta: $idVenta');
+    print('ID Empleado: ${datosVenta['id_empleado']}');
+    print('ID Cliente: ${datosVenta['id_cliente']}');
+    print('ID Producto: ${datosVenta['id_producto']}');
+    print('Fecha de venta: ${datosVenta['fecha_venta']}');
+    print('Cantidad: ${datosVenta['cantidad']}');
+    print('Total a pagar: \$${datosVenta['total_pagar']}');
     print('-----------------------------');
   });
 }
